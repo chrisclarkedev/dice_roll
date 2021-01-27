@@ -175,3 +175,9 @@ main {
   color: #ecd60b;
   font-weight: 700;
 }
+
+/* Hidden Class For Dice */
+
+.hidden {
+  display: none;
+}
