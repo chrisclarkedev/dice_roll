@@ -51,6 +51,12 @@ btnRoll.addEventListener("click", function () {
     // switch to next player
     // If active player is 0 then the new active player should be 1
     // else it should be 0
+
+    // Reset score for both players once a player rolls a "1"
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+
+    // Set current score back to 0
+    currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
   }
 });
