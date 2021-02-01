@@ -95,6 +95,10 @@ btnHold.addEventListener("click", function () {
       // Finish game
       // Set playing to false
       playing = false;
+
+      // Set dice to hidden once game ends
+      diceEl.classList.add("hidden");
+
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add("player--winner");
