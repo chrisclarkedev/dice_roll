@@ -13,11 +13,11 @@ Dice roll game for 2 players. Each player rolls one die, each roll is tallied to
 
 \*Figuring the sequential steps used for the games logic.
 
-\*Structuring the various methods used in DOM manipulation.
+\*Structuring the various methods and functions used.
 
-\*Understanding of DOM manipulation.
+\*Greater understanding of DOM manipulation.
 
-\*Working with DOM manipulation in conjunction with CSS to deliver a understandble and stylized UX.
+\*Working with DOM manipulation in conjunction with CSS to deliver a comprehensive and stylized UX.
 
 &nbsp;
 &nbsp;
