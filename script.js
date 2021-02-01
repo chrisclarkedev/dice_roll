@@ -29,6 +29,15 @@ const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 
+// Function that can be called to switch players
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle("player--active");
+  player1El.classList.toggle("player--active");
+};
+
 // Hides the dice element
 diceEl.classList.add("hidden");
 // Select scores for player 1 and 2 and change them both to 0
@@ -37,7 +46,6 @@ diceEl.classList.add("hidden");
 btnRoll.addEventListener("click", function () {
   // 1. Generating a random dice roll (1-6)
   const dice = Math.trunc(Math.random() * 6) + 1;
-  console.log(dice);
 
   // 2. Display the dice
   diceEl.classList.remove("hidden");
@@ -68,4 +76,20 @@ btnRoll.addEventListener("click", function () {
     player0El.classList.toggle("player--active");
     player1El.classList.toggle("player--active");
   }
+});
+
+btnHold.addEventListener("click", function () {
+  // 1. Add current score to the score of active player
+  scores[activePlayer] += currentScore;
+  // Example : scores[1] = score[1] + currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+  // 2. Check player score if its >=100
+  if (scores[activePlayer] >= 100) {
+    // Finish game
+  }
+
+  // Switch to the next player
+  // Call switchPlayer function
+  switchPlayer();
 });
