@@ -115,4 +115,20 @@ btnHold.addEventListener("click", function () {
   }
 });
 
-btnNew.addEventListener("click", function () {});
+btnNew.addEventListener("click", function () {
+  // Set scores back to 0
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  // Set current score back to 0
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  // Remove winner condition from either player 1 or 2
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+
+  //Remove active player, Set first player as active player
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+});
