@@ -2,7 +2,10 @@
 
 // Both of these do the same thing buy getElementById is a bit faster and is usually used when
 // trying to do multiple items with different id's
+
 // Selecting elements
+const player0El = document.querySelector(".player--0");
+const player1El = document.querySelector(".player--1");
 const score0El = document.querySelector("#score--0");
 const score1El = document.getElementById("score--1");
 const current0El = document.getElementById("current--0");
@@ -58,5 +61,11 @@ btnRoll.addEventListener("click", function () {
     // Set current score back to 0
     currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
+
+    // Toggle Method
+    // Will add the class if it is not there
+    // If it is there it will remove it
+    player0El.classList.toggle("player--active");
+    player1El.classList.toggle("player--active");
   }
 });
