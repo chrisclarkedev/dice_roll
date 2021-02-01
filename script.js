@@ -29,6 +29,9 @@ const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 
+// Used to disable buttons after winner is decided
+let playing = true;
+
 // Function that can be called to switch players
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -44,60 +47,66 @@ diceEl.classList.add("hidden");
 
 // Rolling dice functionality
 btnRoll.addEventListener("click", function () {
-  // 1. Generating a random dice roll (1-6)
-  const dice = Math.trunc(Math.random() * 6) + 1;
+  if (playing) {
+    // 1. Generating a random dice roll (1-6)
+    const dice = Math.trunc(Math.random() * 6) + 1;
 
-  // 2. Display the dice
-  diceEl.classList.remove("hidden");
-  diceEl.src = `dice_${dice}.png`;
+    // 2. Display the dice
+    diceEl.classList.remove("hidden");
+    diceEl.src = `dice_${dice}.png`;
 
-  // 3. Check for rolled 1: if true, switch to next player
-  if (dice !== 1) {
-    // Add dice to current score
-    currentScore += dice;
-    document.getElementById(
-      `current--${activePlayer}`
-    ).textContent = currentScore;
-  } else {
-    // switch to next player
-    // If active player is 0 then the new active player should be 1
-    // else it should be 0
+    // 3. Check for rolled 1: if true, switch to next player
+    if (dice !== 1) {
+      // Add dice to current score
+      currentScore += dice;
+      document.getElementById(
+        `current--${activePlayer}`
+      ).textContent = currentScore;
+    } else {
+      // switch to next player
+      // If active player is 0 then the new active player should be 1
+      // else it should be 0
 
-    // Reset score for both players once a player rolls a "1"
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
+      // Reset score for both players once a player rolls a "1"
+      document.getElementById(`current--${activePlayer}`).textContent = 0;
 
-    // Set current score back to 0
-    currentScore = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
+      // Set current score back to 0
+      currentScore = 0;
+      activePlayer = activePlayer === 0 ? 1 : 0;
 
-    // Toggle Method
-    // Will add the class if it is not there
-    // If it is there it will remove it
-    player0El.classList.toggle("player--active");
-    player1El.classList.toggle("player--active");
+      // Toggle Method
+      // Will add the class if it is not there
+      // If it is there it will remove it
+      player0El.classList.toggle("player--active");
+      player1El.classList.toggle("player--active");
+    }
   }
 });
 
 btnHold.addEventListener("click", function () {
-  // 1. Add current score to the score of active player
-  scores[activePlayer] += currentScore;
-  // Example : scores[1] = score[1] + currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
-  // 2. Check player score if its >=100
-  if (scores[activePlayer] >= 20) {
-    // Finish game
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add("player--winner");
+  if (playing) {
+    // 1. Add current score to the score of active player
+    scores[activePlayer] += currentScore;
+    // Example : scores[1] = score[1] + currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    // 2. Check player score if its >=100
+    if (scores[activePlayer] >= 20) {
+      // Finish game
+      // Set playing to false
+      playing = false;
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add("player--winner");
 
-    // Will remove the current active player after deciding current player is winner
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove("player--active");
-  } else {
-    // Switch to the next player
-    // Call switchPlayer function
-    switchPlayer();
+      // Will remove the current active player after deciding current player is winner
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove("player--active");
+    } else {
+      // Switch to the next player
+      // Call switchPlayer function
+      switchPlayer();
+    }
   }
 });
