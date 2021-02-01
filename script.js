@@ -19,18 +19,34 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
-// Starting conditions
-score0El.textContent = 0;
-score1El.textContent = 0;
-
+let scores, currentScore, activePlayer, playing;
 // Current Score always set to 0 as beginning of game
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
+const init = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
 
-// Used to disable buttons after winner is decided
-let playing = true;
+  // Used to disable buttons after winner is decided
+  playing = true;
+
+  // Set scores back to 0
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  // Set current score back to 0
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  // Remove winner condition from either player 1 or 2
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+
+  //Remove active player, Set first player as active player
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+};
+init();
 
 // Function that can be called to switch players
 const switchPlayer = function () {
@@ -102,6 +118,7 @@ btnHold.addEventListener("click", function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add("player--winner");
+      alert(`Player ${activePlayer} is the winner`);
 
       // Will remove the current active player after deciding current player is winner
       document
@@ -115,20 +132,4 @@ btnHold.addEventListener("click", function () {
   }
 });
 
-btnNew.addEventListener("click", function () {
-  // Set scores back to 0
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-
-  // Set current score back to 0
-  current0El.textContent = 0;
-  current1El.textContent = 0;
-
-  // Remove winner condition from either player 1 or 2
-  player0El.classList.remove("player--winner");
-  player1El.classList.remove("player--winner");
-
-  //Remove active player, Set first player as active player
-  player0El.classList.add("player--active");
-  player1El.classList.remove("player--active");
-});
+btnNew.addEventListener("click", init);
