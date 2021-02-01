@@ -1,6 +1,6 @@
 # DiceZ (Dice Rolling Game)
 
-![picture alt](https://i.etsystatic.com/19743750/r/il/772fae/2237804558/il_794xN.2237804558_ffs5.jpg)
+![picture alt](https://i.ibb.co/0Cqrv4m/dice-rng-banner.jpg)
 
 ## Description
 
