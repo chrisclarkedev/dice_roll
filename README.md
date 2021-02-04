@@ -39,6 +39,9 @@ Current player is highlighted and the other player is blackened out to different
 
 New Game, Roll Dice, Hold
 
+&nbsp;
+&nbsp;
+
 - New Game
 
   - Erases all scores resetting game completely
@@ -51,6 +54,8 @@ New Game, Roll Dice, Hold
 
 - Hold
   -Adds current number to total score and ends current players turn allowing the player to not risk rolling a "1" on their next roll
+
+&nbsp;
 
 Player who reached 100 total score wins the game.
 
