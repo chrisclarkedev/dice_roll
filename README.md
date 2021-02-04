@@ -26,3 +26,32 @@ Dice roll game for 2 players. Each player rolls one die, each roll is tallied to
 &nbsp;
 
 ### Features-List
+
+Dice rolling game that uses a random number generator which determines how many point each player gets.
+
+First player to reach 100 wins the game.
+
+Player 1 and 2 have their own section which displays their current dice roll number and score.
+
+Current player is highlighted and the other player is blackened out to differentiate which players turn it is.
+
+3 functional buttons which control various aspect of the game.
+
+New Game, Roll Dice, Hold
+
+- New Game
+
+  - Erases all scores resetting game completely
+
+- Roll Dice
+  -Current player rolls dice
+  -Die rolled is displayed in middle of window
+  -Die number is shown in respective players current window
+  -If die rolled is "1" current player loses turn and next player proceeds to roll his die.
+
+- Hold
+  -Adds current number to total score and ends current players turn allowing the player to not risk rolling a "1" on their next roll
+
+Player who reached 100 total score wins the game.
+
+Background color of player that has won game changes color to gold signifying that they have won.

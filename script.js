@@ -118,7 +118,6 @@ btnHold.addEventListener("click", function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add("player--winner");
-      alert(`Player ${activePlayer} is the winner`);
 
       // Will remove the current active player after deciding current player is winner
       document
