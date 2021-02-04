@@ -37,14 +37,13 @@ Current player is highlighted and the other player is blackened out to different
 
 3 functional buttons which control various aspect of the game.
 
-New Game, Roll Dice, Hold
+New Game, Roll Dice, Hold.
 
 &nbsp;
 &nbsp;
 
 - New Game
-
-  - Erases all scores resetting game completely
+  -Erases all scores resetting game completely
 
 - Roll Dice
   -Current player rolls dice
