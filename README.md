@@ -36,10 +36,9 @@ Player 1 and 2 have their own section which displays their current dice roll num
 Current player is highlighted and the other player is blackened out to differentiate which players turn it is.
 
 3 functional buttons which control various aspect of the game.
+&nbsp;
 
 **New Game, Roll Dice, Hold**
-
-&nbsp;
 
 \*New Game
 
