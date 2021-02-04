@@ -47,6 +47,7 @@ New Game, Roll Dice, Hold.
 - Erases all scores resetting game completely
 
 **Roll Dice**
+
 -Current player rolls dice
 -Die rolled is displayed in middle of window
 -Die number is shown in respective players current window
