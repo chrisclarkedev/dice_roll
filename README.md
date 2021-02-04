@@ -37,23 +37,23 @@ Current player is highlighted and the other player is blackened out to different
 
 3 functional buttons which control various aspect of the game.
 
-New Game, Roll Dice, Hold.
+**New Game, Roll Dice, Hold**
 
 &nbsp;
-&nbsp;
 
-**New Game**
+\*New Game
 
 - Erases all scores resetting game completely
 
-**Roll Dice**
+\*Roll Dice
 
 -Current player rolls dice
 -Die rolled is displayed in middle of window
 -Die number is shown in respective players current window
 -If die rolled is "1" current player loses turn and next player proceeds to roll his die.
 
-**Hold**
+\*Hold
+
 -Adds current number to total score and ends current players turn allowing the player to not risk rolling a "1" on their next roll
 
 &nbsp;
